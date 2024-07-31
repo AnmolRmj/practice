@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {  RouterProvider } from 'react-router-dom';
+import { MainRoute } from './router/MainRouter';
+import { AppContextProvider } from './component/ContextApi';
+import './App.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppContextProvider>
+    <RouterProvider router={MainRoute} />
+    </AppContextProvider>
   </React.StrictMode>
 );
 
